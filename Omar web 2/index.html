@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تشريح الفك والاسنان</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box; font-family:'Cairo',sans-serif}
+    body{margin:0; background:#050505; color:#e2e8f0; display:flex; justify-content:center; align-items:center; height:100vh; padding:20px}
+    #container{position:relative; display:inline-block}
+    #jaw-img{max-width:90vw; max-height:90vh; display:block; border-radius:10px; border:2px solid #334155}
+    
+    .area{
+      position:absolute; 
+      cursor:pointer; 
+      border:2px solid; 
+      opacity:0.35;
+      transition:0.2s;
+      border-radius:4px;
+    }
+    .area:hover{opacity:0.7; border-width:3px; transform:scale(1.05)}
+
+    #info{
+      position:absolute; 
+      top:20px; 
+      right:-400px; 
+      width:370px; 
+      background:rgba(15,23,42,0.98); 
+      padding:20px; 
+      border-radius:12px; 
+      display:none; 
+      border:1px solid #334155; 
+      z-index:100;
+      max-height:90vh;
+      overflow-y:auto;
+    }
+    #info.active{display:block}
+    #info h2{margin:0 0 15px 0; color:#38bdf8; font-size:20px}
+    #info p{margin:8px 0; font-size:14px; line-height:1.6}
+    #info b{color:#fbbf24}
+   .close-btn{float:left; background:#ef4444; border:none; color:white; border-radius:50%; width:28px; height:28px; cursor:pointer; font-size:18px}
+  </style>
+</head>
+<body>
+  <div id="container">
+    <img id="jaw-img" src="jaw.jpg">
+    <div id="info">
+      <button class="close-btn" onclick="info.classList.remove('active')">×</button>
+      <h2 id="partName"></h2>
+      <p><b>النوع:</b> <span id="type"></span></p>
+      <p><b>العدد:</b> <span id="count"></span></p>
+      <p><b>الوظيفة:</b> <span id="function"></span></p>
+      <p><b>الشكل:</b> <span id="shape"></span></p>
+      <p><b>مكانها:</b> <span id="location"></span></p>
+      <p><b>بتطلع امتى:</b> <span id="age"></span></p>
+      <p><b>معلومة:</b> <span id="note"></span></p>
+    </div>
+  </div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
